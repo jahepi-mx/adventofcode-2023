@@ -89,10 +89,8 @@ public class Day11 {
                     if (nx >= 0 && nx < len && ny >= 0 && ny < len && visited[ny * len + nx] == 0) {
                         long dist = distances[parent] + (weights.contains(parent + " " + (ny * len + nx)) ? dis : 1);
                         distances[ny * len + nx] = distances[ny * len + nx] == -1 ? dist : Math.min(dist, distances[ny * len + nx]);
-                        if (visited[ny * len + nx] == 0) {
-                            queue.add(ny * len + nx);
-                            visited[ny * len + nx] = 1;
-                        }
+                        queue.add(ny * len + nx);
+                        visited[ny * len + nx] = 1;
                     }
                 }
                 visited[parent] = 1;
